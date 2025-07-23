@@ -14,8 +14,8 @@
     "title": {
       "type": "string"
     },
-    "subtitle": {
-      "type": "string"
+    "richsubtitle": {
+      "type": "blocks"
     },
     "heroText": {
       "type": "text"

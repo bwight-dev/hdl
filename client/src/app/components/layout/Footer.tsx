@@ -1,7 +1,24 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function Footer() {
+async function getFooterData() {
+  try {
+    const response = await fetch('http://localhost:1337/api/footer?populate=*');
+    const data = await response.json();
+    //console.log('Fetched footer data:', data);
+    return data.data;
+  } catch (error) {
+    console.error('Error fetching footer:', error);
+    return null;
+  }
+}
+
+export default async function Footer() {
+  const footerData = await getFooterData();
+  console.log('Footer data:', footerData);
+  const footerImage = footerData?.image?.url
+    ? `http://localhost:1337${footerData.image.url}`
+    : null;
   return (
     <footer className="w-full bg-gray-900 border-t border-gray-800">
       <div className="container mx-auto px-4 max-w-7xl py-12">
@@ -29,13 +46,19 @@ export default function Footer() {
           {/* Author section */}
           <div className="text-right">
             <div className="inline-block">
+              {footerImage ? (
               <Image
-                src="/author-photo.jpg"
+                src={footerImage}
                 alt="Author"
                 width={120}
                 height={120}
                 className="rounded-full"
               />
+              ) : (
+                <div className="w-30 h-30 bg-gray-700 rounded-full flex items-center justify-center">
+                  <span className="text-white text-lg">Author</span>
+                </div>
+              )}
             </div>
           </div>
         </div>

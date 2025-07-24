@@ -2,33 +2,7 @@ import Image from 'next/image';
 
 export default function AwardsSection({ data }: { data: any }) {
   // This would come from Strapi
-  const awards = data?.awards || [
-    {
-      id: 1,
-      title: "Literary Titan Book Award",
-      subtitle: "Gold Book Award",
-      image: "/award-literary-titan.png"
-    },
-    {
-      id: 2,
-      title: "Feathered Quill Book Awards",
-      subtitle: "Bronze Medalist - Adult Fiction (2025)",
-      image: "/award-feathered-quill.png"
-    },
-    {
-      id: 3,
-      title: "2024 WINNER",
-      subtitle: "SPEAK UP TALK RADIO FIREBIRD BOOK AWARDS",
-      description: "2024 Firebird Book Award Grand Prize in Special Needs and First Prize in Literary Fiction",
-      image: "/award-firebird.png"
-    },
-    {
-      id: 4,
-      title: "HUMOR & SATIRE Awards",
-      subtitle: "2023 CIBAs Mark Twain Award Long List for Humor and Satire",
-      image: "/award-humor-satire.png"
-    }
-  ];
+  const awards = data?.awards || [];
 
   return (
     <section className="py-20 bg-black">
@@ -45,7 +19,7 @@ export default function AwardsSection({ data }: { data: any }) {
             >
               <div className="h-40 flex items-center justify-center mb-4">
                 <Image
-                  src={award.image}
+                  src={`http://localhost:1337${award.image.url}`}
                   alt={award.title}
                   width={150}
                   height={150}

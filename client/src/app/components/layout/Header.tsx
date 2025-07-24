@@ -5,7 +5,7 @@ async function getLogoData() {
   try {
     const response = await fetch('http://localhost:1337/api/logo?populate=*');
     const data = await response.json();
-    console.log('Fetched logo data:', data);
+    //console.log('Fetched logo data:', data);
     return data.data;
   } catch (error) {
     console.error('Error fetching logo:', error);

@@ -4,10 +4,9 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '1337',
-        pathname: '/uploads/**',
+        protocol: 'https',
+        hostname: 'effortless-advice-3210b87c9d.media.strapiapp.com',
+        pathname: '/**',
       },
     ],
   },

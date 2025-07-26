@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 async function getFooterData() {
   try {
-    const response = await fetch('http://localhost:1337/api/footer?populate=*');
+    const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/footer?populate=*`);
     const data = await response.json();
     //console.log('Fetched footer data:', data);
     return data.data;
@@ -16,9 +16,7 @@ async function getFooterData() {
 export default async function Footer() {
   const footerData = await getFooterData();
   console.log('Footer data:', footerData);
-  const footerImage = footerData?.image?.url
-    ? `http://localhost:1337${footerData.image.url}`
-    : null;
+  const footerImage = footerData?.image?.url || null;
   return (
     <footer className="w-full bg-gray-900 border-t border-gray-800">
       <div className="container mx-auto px-4 max-w-7xl py-12">

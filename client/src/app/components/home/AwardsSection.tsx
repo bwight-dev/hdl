@@ -19,7 +19,7 @@ export default function AwardsSection({ data }: { data: any }) {
             >
               <div className="h-40 flex items-center justify-center mb-4">
                 <Image
-                  src={`http://localhost:1337${award.image.url}`}
+                  src={award.image.url}
                   alt={award.title}
                   width={150}
                   height={150}

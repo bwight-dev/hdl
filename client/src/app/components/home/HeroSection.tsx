@@ -4,9 +4,7 @@ import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 
 export default function HeroSection({ data }: { data: any }) {
   // Fix the image URL path - bookCover is directly on data, not nested
-  const imageUrl = data?.bookCover?.url 
-    ? `http://localhost:1337${data.bookCover.url}`
-    : '/book-cover.jpg';
+  const imageUrl = data?.bookCover?.url || '/book-cover.jpg';
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">

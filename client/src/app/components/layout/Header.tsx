@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 async function getLogoData() {
   try {
-    const response = await fetch('http://localhost:1337/api/logo?populate=*');
+    const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/logo?populate=*`);
     const data = await response.json();
     //console.log('Fetched logo data:', data);
     return data.data;
@@ -15,9 +15,7 @@ async function getLogoData() {
 
 export default async function Header() {
   const logoData = await getLogoData();
-  const logoUrl = logoData?.image?.url 
-    ? `http://localhost:1337${logoData.image.url}`
-    : null;
+  const logoUrl = logoData?.image?.url || null;
   return (
     <header className="w-full bg-black/90 backdrop-blur-sm fixed top-0 z-50 border-b border-gray-800">
       <div className="container mx-auto px-4 max-w-7xl">

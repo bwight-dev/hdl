@@ -5,7 +5,7 @@ import BookDescriptionSection from './components/home/BookDescriptionSection';
 // In src/app/page.tsx
 async function getHomePageData() {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/home-page?populate[bookCover][populate]=*&populate[awards][populate]=*`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/home-page?populate[bookCover][populate]=*&populate[awards][populate]=*&populate[description]=*`, {
       next: { revalidate: 60 }
     });
     

@@ -25,6 +25,7 @@ export interface HomePageData {
   bookCover?: StrapiImage;
   buyLink?: string;
   awards?: Award[];
+  description?: string; // Strapi richtext content
 }
 
 // Book description section data

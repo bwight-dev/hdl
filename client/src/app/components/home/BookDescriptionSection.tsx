@@ -1,18 +1,19 @@
 import Link from "next/link";
+import { BookDescriptionData } from '@/types/strapi';
 
-export default function BookDescriptionSection({ data }: { data: any }) {
+export default function BookDescriptionSection({ data }: { data: BookDescriptionData }) {
   return (
     <section className="py-20 bg-gray-900">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="space-y-6 text-lg leading-relaxed">
           <p className="text-xl font-semibold">
-            I can't talk. I can't care for myself. My perfect Mormon family is in crisis. 
-            And it's only Monday.
+            I can&apos;t talk. I can&apos;t care for myself. My perfect Mormon family is in crisis. 
+            And it&apos;s only Monday.
           </p>
           
           <p>
             Inspired by reality, <em>Of the Noble and Great Ones</em> is the award-winning 
-            inside story of one intellectually disabled autistic teenager's triumphant 
+            inside story of one intellectually disabled autistic teenager&apos;s triumphant 
             nightmare quest to solve the riddles of life and eternity:
           </p>
           
@@ -32,14 +33,14 @@ export default function BookDescriptionSection({ data }: { data: any }) {
           </p>
           
           <p>
-            As revealed by H.D. LOGIC, channeling Juke's genius inner voice, 
+            As revealed by H.D. LOGIC, channeling Juke&apos;s genius inner voice, 
             <em>Of the Noble and Great Ones</em> is the literary novel and modern spiritual 
             epic as complex and sensational as the human beings with disabilities in your life.
           </p>
           
           <div className="mt-12 text-center">
             <p className="text-2xl font-bold mb-6">
-              Are you ready to get inside Juke's head?
+              Are you ready to get inside Juke&apos;s head?
             </p>
             <Link 
               href={data?.buyLink || '#'}

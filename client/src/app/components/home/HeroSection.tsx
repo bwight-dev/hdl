@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
+import { HomePageData } from '@/types/strapi';
 
-export default function HeroSection({ data }: { data: any }) {
+export default function HeroSection({ data }: { data: HomePageData }) {
   // Fix the image URL path - bookCover is directly on data, not nested
   const imageUrl = data?.bookCover?.url || '/book-cover.jpg';
 

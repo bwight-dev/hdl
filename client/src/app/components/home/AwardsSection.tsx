@@ -1,6 +1,7 @@
 import Image from 'next/image';
+import { HomePageData } from '@/types/strapi';
 
-export default function AwardsSection({ data }: { data: any }) {
+export default function AwardsSection({ data }: { data: HomePageData }) {
   // This would come from Strapi
   const awards = data?.awards || [];
 
@@ -12,7 +13,7 @@ export default function AwardsSection({ data }: { data: any }) {
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {awards.map((award: any) => (
+          {awards.map((award) => (
             <div 
               key={award.id}
               className="bg-gray-900 rounded-lg p-6 text-center hover:bg-gray-800 transition duration-300 border border-gray-800 hover:border-amber-500"

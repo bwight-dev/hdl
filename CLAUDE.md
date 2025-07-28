@@ -28,17 +28,60 @@ npm run strapi   # Access Strapi CLI commands
 1. Start the backend first: `cd server && npm run develop`
 2. In a new terminal, start the frontend: `cd client && npm run dev`
 
+## Strapi Development Workflow
+
+### Understanding the Separation
+- **Schema/Structure Changes**: Must be done locally, deployed via Git
+- **Content Management**: Done in Strapi Cloud only
+- **Production Limitations**: Content-Type Builder is read-only in production (by design)
+
+### When to Use Local vs Cloud
+
+#### Use Local Strapi (`npm run develop`) for:
+- Creating new content types
+- Adding/modifying fields in existing content types
+- Installing or configuring plugins
+- Any structural changes to the CMS
+
+#### Use Strapi Cloud for:
+- Creating/editing/deleting content entries
+- Uploading media files
+- Managing users and permissions
+- All day-to-day content management
+
+### Development to Production Flow
+1. **Make Schema Changes Locally**:
+   ```bash
+   cd server && npm run develop
+   # Make changes in Content-Type Builder
+   # Test locally
+   ```
+
+2. **Deploy to Cloud**:
+   ```bash
+   git add .
+   git commit -m "Add new content type"
+   git push origin main
+   # Strapi Cloud auto-deploys schema changes
+   ```
+
+3. **Manage Content in Cloud**:
+   - Go to https://effortless-advice-3210b87c9d.strapiapp.com/admin
+   - Add/edit content using the new schema
+
 ## Cloud Deployment
 
 ### Production Setup
 - **Strapi Cloud**: https://effortless-advice-3210b87c9d.strapiapp.com
 - **Deployment**: Automatic on push to main branch
-- **Development Workflow**: Cloud-First approach - content managed in cloud, code developed locally
+- **Database**: PostgreSQL (managed by Strapi Cloud)
 
 ### Environment Configuration
 Frontend uses environment variables for API URLs:
-- **Development**: `.env.local` with `NEXT_PUBLIC_STRAPI_URL=http://localhost:1337`
+- **Development**: `.env.local` with `NEXT_PUBLIC_STRAPI_URL=https://effortless-advice-3210b87c9d.strapiapp.com`
 - **Production**: `.env.production` with `NEXT_PUBLIC_STRAPI_URL=https://effortless-advice-3210b87c9d.strapiapp.com`
+
+Note: Both environments now point to cloud Strapi since we're using cloud-first approach for content.
 
 ## Architecture
 
@@ -59,8 +102,8 @@ Located in `/server/src/api/`:
 - `logo`: Site logo configuration
 
 ### Database
-- Development uses SQLite (file: `/server/.tmp/data.db`)
-- Can be configured for PostgreSQL/MySQL in production via `/server/config/database.ts`
+- **Local Development**: SQLite (file: `/server/.tmp/data.db`)
+- **Production (Strapi Cloud)**: PostgreSQL (managed by Strapi Cloud)
 
 ## Key Development Patterns
 
@@ -79,7 +122,8 @@ import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 
 ### Image URLs from Strapi
 ```typescript
-const imageUrl = `${process.env.NEXT_PUBLIC_STRAPI_URL}${data.attributes.url}`;
+// Strapi Cloud returns complete URLs for images
+const imageUrl = data.attributes.url; // e.g., https://effortless-advice-3210b87c9d.media.strapiapp.com/...
 ```
 
 ## Important Notes

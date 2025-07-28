@@ -17,9 +17,6 @@
     "richsubtitle": {
       "type": "blocks"
     },
-    "heroText": {
-      "type": "text"
-    },
     "buyLink": {
       "type": "string"
     },
@@ -32,6 +29,9 @@
         "videos",
         "audios"
       ]
+    },
+    "description": {
+      "type": "richtext"
     },
     "awards": {
       "type": "component",

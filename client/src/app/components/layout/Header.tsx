@@ -1,21 +1,28 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
-async function getLogoData() {
-  try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/logo?populate=*`);
-    const data = await response.json();
-    //console.log('Fetched logo data:', data);
-    return data.data;
-  } catch (error) {
-    console.error('Error fetching logo:', error);
-    return null;
-  }
-}
-
-export default async function Header() {
-  const logoData = await getLogoData();
-  const logoUrl = logoData?.image?.url || null;
+export default function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [spoilersOpen, setSpoilersOpen] = useState(false);
+  const [logoUrl, setLogoUrl] = useState<string | null>(null);
+  
+  // Fetch logo data on mount
+  useEffect(() => {
+    async function fetchLogo() {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/logo?populate=*`);
+        const data = await response.json();
+        setLogoUrl(data.data?.image?.url || null);
+      } catch (error) {
+        console.error('Error fetching logo:', error);
+      }
+    }
+    fetchLogo();
+  }, []);
+  
   return (
     <header className="w-full bg-black/90 backdrop-blur-sm fixed top-0 z-50 border-b border-gray-800">
       <div className="container mx-auto px-4 max-w-7xl">
@@ -26,9 +33,9 @@ export default async function Header() {
               <Image
                 src={logoUrl}
                 alt="HD Logic"
-                width={150}  // Adjust size as needed
-                height={60}   // Adjust size as needed
-                className="h-12 w-auto"  // This maintains aspect ratio
+                width={150}
+                height={60}
+                className="h-12 w-auto"
                 priority
               />
             ) : (
@@ -36,7 +43,7 @@ export default async function Header() {
             )}
           </Link>
           
-          {/* Navigation */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link href="/" className="hover:text-amber-400 transition">
               HOME
@@ -48,8 +55,20 @@ export default async function Header() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
+              {/* Dropdown menu */}
+              <div className="absolute left-0 mt-2 w-64 bg-gray-900/95 backdrop-blur-sm border border-gray-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <Link href="/spoilers/what-plot" className="block px-6 py-3 hover:bg-gray-800 hover:text-amber-400 transition-colors border-b border-gray-800">
+                  WHAT PLOT!?
+                </Link>
+                <Link href="/spoilers/who-are-these-characters" className="block px-6 py-3 hover:bg-gray-800 hover:text-amber-400 transition-colors border-b border-gray-800">
+                  WHO ARE THESE CHARACTERS!?
+                </Link>
+                <Link href="/spoilers/degrees-of-dream-interpretation" className="block px-6 py-3 hover:bg-gray-800 hover:text-amber-400 transition-colors rounded-b-lg">
+                  DEGREES OF DREAM INTERPRETATION
+                </Link>
+              </div>
             </div>
-            <Link href="/dictionary" className="hover:text-amber-400 transition">
+            <Link href="/h-d-dictionary" className="hover:text-amber-400 transition">
               H.D. DICTIONARY
             </Link>
             <div className="relative group">
@@ -66,13 +85,77 @@ export default async function Header() {
           </div>
 
           {/* Mobile menu button */}
-          <button className="md:hidden">
+          <button 
+            className="md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
             </svg>
           </button>
         </nav>
       </div>
+      
+      {/* Mobile Navigation */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-black/95 backdrop-blur-sm border-t border-gray-800">
+          <div className="container mx-auto px-4">
+            <div className="py-4 space-y-4">
+              <Link href="/" className="block py-2 hover:text-amber-400 transition" onClick={() => setMobileMenuOpen(false)}>
+                HOME
+              </Link>
+              
+              {/* SPOILERS!? Mobile Dropdown */}
+              <div>
+                <button 
+                  className="w-full text-left py-2 hover:text-amber-400 transition flex items-center justify-between"
+                  onClick={() => setSpoilersOpen(!spoilersOpen)}
+                >
+                  SPOILERS!?
+                  <svg className={`w-4 h-4 transition-transform ${spoilersOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {spoilersOpen && (
+                  <div className="ml-4 mt-2 space-y-2">
+                    <Link 
+                      href="/spoilers/what-plot" 
+                      className="block py-2 text-gray-300 hover:text-amber-400 transition"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      WHAT PLOT!?
+                    </Link>
+                    <Link 
+                      href="/spoilers/who-are-these-characters" 
+                      className="block py-2 text-gray-300 hover:text-amber-400 transition"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      WHO ARE THESE CHARACTERS!?
+                    </Link>
+                    <Link 
+                      href="/spoilers/degrees-of-dream-interpretation" 
+                      className="block py-2 text-gray-300 hover:text-amber-400 transition"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      DEGREES OF DREAM INTERPRETATION
+                    </Link>
+                  </div>
+                )}
+              </div>
+              
+              <Link href="/h-d-dictionary" className="block py-2 hover:text-amber-400 transition" onClick={() => setMobileMenuOpen(false)}>
+                H.D. DICTIONARY
+              </Link>
+              <Link href="/hd-logic" className="block py-2 hover:text-amber-400 transition" onClick={() => setMobileMenuOpen(false)}>
+                H.D. LOGIC
+              </Link>
+              <Link href="/songs" className="block py-2 hover:text-amber-400 transition" onClick={() => setMobileMenuOpen(false)}>
+                SONGS
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

@@ -69,8 +69,8 @@ export default async function HDDictionaryPage() {
           
           {/* Subtitle */}
           {dictionaryData?.subtitle && (
-            <div className="text-center mb-16 max-w-3xl mx-auto">
-              <Markdown className="text-lg md:text-xl text-gray-300">
+            <div className="text-center mb-16 max-w-3xl mx-auto text-lg md:text-xl text-gray-300">
+              <Markdown>
                 {dictionaryData.subtitle}
               </Markdown>
             </div>

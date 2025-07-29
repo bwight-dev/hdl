@@ -3,11 +3,11 @@ import Markdown from 'react-markdown';
 
 async function getDictionaryData() {
   try {
-    // Try without populate first to see if we get any response
-    const testUrl = `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/hd-dictionary-page`;
-    console.log('Fetching from URL:', testUrl);
+    // Try with populate for backgroundImage
+    const url = `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/hd-dictionary-page?populate=backgroundImage`;
+    console.log('Fetching from URL:', url);
     
-    const response = await fetch(testUrl, {
+    const response = await fetch(url, {
       next: { revalidate: 60 }
     });
     

@@ -5,7 +5,7 @@ export default function WhoAreTheseCharactersPage() {
         <h1 className="text-5xl font-bold mb-8">WHO ARE THESE CHARACTERS!?</h1>
         <div className="prose prose-lg prose-invert max-w-none">
           <p className="text-xl text-gray-300 mb-8">
-            Meet the complex and compelling characters of "Of the Noble and Great Ones"
+            Meet the complex and compelling characters of &ldquo;Of the Noble and Great Ones&rdquo;
           </p>
           {/* Content will be added here */}
           <div className="bg-gray-900 rounded-lg p-8 mt-12">

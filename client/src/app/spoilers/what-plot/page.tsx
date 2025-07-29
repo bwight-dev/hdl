@@ -5,7 +5,7 @@ export default function WhatPlotPage() {
         <h1 className="text-5xl font-bold mb-8">WHAT PLOT!?</h1>
         <div className="prose prose-lg prose-invert max-w-none">
           <p className="text-xl text-gray-300 mb-8">
-            Dive into the intricate storylines of "Of the Noble and Great Ones"
+            Dive into the intricate storylines of &ldquo;Of the Noble and Great Ones&rdquo;
           </p>
           {/* Content will be added here */}
           <div className="bg-gray-900 rounded-lg p-8 mt-12">

@@ -77,9 +77,9 @@ export default async function HDDictionaryPage() {
           )}
           
           {/* Dictionary Content */}
-          {dictionaryData?.content ? (
-            <div className="bg-gray-900/90 backdrop-blur-sm rounded-lg p-8 md:p-12 border border-gray-800">
-              <div className="prose prose-lg prose-invert max-w-none dictionary-content">
+          <div className="bg-gray-900/90 backdrop-blur-sm rounded-lg p-8 md:p-12 border border-gray-800">
+            <div className="prose prose-lg prose-invert max-w-none dictionary-content">
+              {dictionaryData?.content ? (
                 <Markdown
                   components={{
                     p: ({ children }) => <p className="mb-6">{children}</p>,
@@ -89,13 +89,66 @@ export default async function HDDictionaryPage() {
                 >
                   {dictionaryData.content}
                 </Markdown>
-              </div>
+              ) : (
+                /* Static content as fallback */
+                <div className="space-y-8 text-lg">
+                  <p className="border-b border-gray-700 pb-2 mb-6 text-gray-400">* * * * *</p>
+                  
+                  <div>
+                    <p><strong>867.4 quadrillion</strong> <em>n</em> : the hypothetical number of eternal spirits; a proxy for &ldquo;infinite&rdquo; for pre-mortal comprehension</p>
+                  </div>
+                  
+                  <div>
+                    <p><strong>advanced</strong> <em>adj</em> <strong>1</strong> : having accumulated net-positive experience : aged (well) <strong>2</strong> : the degree of accumulation of net-positive experience — <strong>exceedingly advanced</strong> <em>adj</em> : ancient — <strong>far advanced</strong> <em>adj</em> : old — <strong>newly advanced</strong> <em>adj</em> : young — <strong>not-too-far-advanced</strong> <em>adj</em> : teenage <strong>3</strong> : of a higher quality or progression — <strong>advance</strong> <em>v</em> (progress) <strong>4</strong> : a significant accumulation</p>
+                  </div>
+                  
+                  <div>
+                    <p><strong>Angel</strong> <em>n</em> : an eternal spirit who does not follow Righteousness : evil spirit — <strong>Angelic</strong> <em>adj</em></p>
+                  </div>
+                  
+                  <div>
+                    <p><strong>Armory</strong> <em>n</em> : the Righteous temple for the performance of rituals or the receipt of spiritual knowledge</p>
+                  </div>
+                  
+                  <div>
+                    <p><strong>as born as a birthday</strong> <em>adj phr</em> : ironic expression for &ldquo;certainly born&rdquo; (ironic because anniversa-ries are meaningless in eternity) : as dead as a doornail : certain-ly dead</p>
+                  </div>
+                  
+                  <div>
+                    <p><strong>Aufklärung</strong> <em>n</em> <strong>1</strong> : in Righteous theology, a divine endowment of wisdom received in preparation for birth to help overcome, endure, understand, or comprehend great challenges <strong>2</strong> : enlightenment</p>
+                  </div>
+                  
+                  <div>
+                    <p><strong>Balaam</strong> <em>n</em> : a God infamous for conversing with His ass</p>
+                  </div>
+                  
+                  <div>
+                    <p><strong>bewonderment</strong> <em>n</em> : amazement or difficulty in believing a practice or course of conduct exists or per-sists, particularly with respect to Righteousness — <strong>bewonder</strong> <em>n</em> — <em>v</em></p>
+                  </div>
+                  
+                  <div>
+                    <p><strong>dream</strong> <em>n</em> : how things could be — <strong>nightmare</strong> <em>n</em> (disadvanced dream); <em>see</em> <strong>life</strong></p>
+                  </div>
+                  
+                  <div>
+                    <p><strong>eternal spirit</strong> <em>n</em> <strong>1</strong> : an individual woman, man, or child : human being : person : soul <strong>2</strong> : an individual woman, man, or child living in the pre-Existence <strong>3</strong> : any living organism</p>
+                  </div>
+                  
+                  <div>
+                    <p><strong>Heavenly Dream Logic</strong> <em>n</em> <strong>1</strong> : whenever reason without language or math <strong>2</strong> : thinking primarily by sense or the senses; sensational thought — <strong>get in tune</strong> <em>v phr</em> (decipher H.D. Logic) <strong>3</strong> : perception less inhibited by time and custom <strong>4</strong> : the Ghost of Future Present <strong>5</strong> : the surrogate for a separate consciousness (anonymous) <strong>6</strong> : the author of <em>The Scriptures</em> <strong>7</strong> : the mouthpiece, voice, and interpsychographer <strong>8</strong> : a caregiver <strong>9</strong> : Me!</p>
+                  </div>
+                  
+                  <div>
+                    <p><strong>life</strong> <em>n</em> <strong>1</strong> : the existence of an eternal spirit <strong>2</strong> : one; one thing <strong>3</strong> : a precious gift (unexpected) <strong>4</strong> : the greatest book whenever written</p>
+                  </div>
+                  
+                  <div>
+                    <p><strong>whenever</strong> <em>n</em> <strong>1</strong> : Eternal God <strong>2</strong> : unit of eternal time (always indeterminate) : instant : minute : moment : second : time</p>
+                  </div>
+                </div>
+              )}
             </div>
-          ) : (
-            <div className="bg-gray-900 rounded-lg p-8 text-center">
-              <p className="text-gray-400">Dictionary entries coming soon...</p>
-            </div>
-          )}
+          </div>
         </div>
       </div>
     </div>

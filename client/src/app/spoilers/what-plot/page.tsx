@@ -34,7 +34,7 @@ export default function WhatPlotPage() {
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-cyan-400 text-center mb-8">DAYS</h2>
             <div className="space-y-4">
-              {days.map((day, index) => (
+              {days.map((day) => (
                 <Link
                   key={day.name}
                   href={day.href}
@@ -50,7 +50,7 @@ export default function WhatPlotPage() {
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-purple-400 text-center mb-8">NIGHTS</h2>
             <div className="space-y-4">
-              {nights.map((night, index) => (
+              {nights.map((night) => (
                 <Link
                   key={night.name}
                   href={night.href}

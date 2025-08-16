@@ -2,27 +2,12 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [spoilersOpen, setSpoilersOpen] = useState(false);
   const [hdLogicOpen, setHdLogicOpen] = useState(false);
-  const [logoUrl, setLogoUrl] = useState<string | null>(null);
-  
-  // Fetch logo data on mount
-  useEffect(() => {
-    async function fetchLogo() {
-      try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/logo?populate=*`);
-        const data = await response.json();
-        setLogoUrl(data.data?.image?.url || null);
-      } catch (error) {
-        console.error('Error fetching logo:', error);
-      }
-    }
-    fetchLogo();
-  }, []);
   
   return (
     <header className="w-full bg-black/90 backdrop-blur-sm fixed top-0 z-50 border-b border-gray-800">
@@ -30,18 +15,14 @@ export default function Header() {
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            {logoUrl ? (
-              <Image
-                src={logoUrl}
-                alt="HD Logic"
-                width={150}
-                height={60}
-                className="h-12 w-auto"
-                priority
-              />
-            ) : (
-              <span className="text-3xl font-bold tracking-tight">HD Logic</span>
-            )}
+            <Image
+              src="/images/HD-Logic-Typeface.Circular.Platinum.png"
+              alt="HD Logic"
+              width={150}
+              height={60}
+              className="h-12 w-auto"
+              priority
+            />
           </Link>
           
           {/* Desktop Navigation */}

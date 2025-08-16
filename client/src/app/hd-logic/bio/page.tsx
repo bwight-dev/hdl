@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export default function BioPage() {
   return (
     <div className="min-h-screen pt-32 pb-20">

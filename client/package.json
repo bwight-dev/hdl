@@ -9,11 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@strapi/blocks-react-renderer": "^1.0.2",
     "next": "15.4.3",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "react-markdown": "^10.1.0"
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

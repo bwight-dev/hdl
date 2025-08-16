@@ -10,19 +10,21 @@ export default function HomePage() {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-6 items-center max-w-5xl mx-auto">
             {/* Text Content */}
-            <div className="text-center lg:text-left space-y-8">
+            <div className="text-center space-y-8">
               <div className="space-y-4">
-                <p className="text-xl md:text-2xl text-gray-300">
+                <p className="text-xl md:text-2xl text-red-500 font-semibold">
                   The Truest Story Whenever<br />
                   Told about Life and<br />
                   Disabilities
                 </p>
                 <h1 className="text-5xl md:text-7xl font-bold">
-                  Of the<br />
-                  <span className="text-cyan-400">NOBLE</span> and <span className="text-purple-400">GREAT</span><br />
-                  Ones
+                  <span className="italic">Of the</span><br />
+                  <span className="text-white">NOBLE</span><br />
+                  <span className="italic">and</span><br />
+                  <span className="text-white">GREAT</span><br />
+                  <span className="italic">Ones</span>
                 </h1>
               </div>
               
@@ -37,7 +39,7 @@ export default function HomePage() {
             </div>
             
             {/* Book Cover */}
-            <div className="flex justify-center lg:justify-end">
+            <div className="flex justify-center">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 blur-3xl opacity-30" />
                 <Image

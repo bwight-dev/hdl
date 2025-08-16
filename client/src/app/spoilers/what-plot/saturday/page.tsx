@@ -12,72 +12,97 @@ export default function SaturdayPage() {
             {/* Chapter 41 */}
             <div className="bg-gray-900 rounded-lg p-8 border-l-4 border-green-500">
               <h2 className="text-2xl font-bold mb-4 text-green-400">Chapter 41: Weekenders</h2>
-              <p className="text-gray-300">
-                Juke wakes up at the group home and is told Dad is coming to take him home for the weekend. 
-                Dad arrives, and they plan to visit the mall and do activities Juke enjoys.
-              </p>
+              <ul className="list-disc pl-6 space-y-2 text-gray-300">
+                <li>Juke wakes up at the group home</li>
+                <li>Staff tell him Dad is coming for weekend visit</li>
+                <li>Dad arrives to pick up Juke</li>
+                <li>They plan mall visit and fun activities</li>
+              </ul>
             </div>
             
             {/* Chapter 42 */}
             <div className="bg-gray-900 rounded-lg p-8 border-l-4 border-cyan-500">
               <h2 className="text-2xl font-bold mb-4 text-cyan-400">Chapter 42: Jubilee</h2>
-              <p className="text-gray-300">
-                They meet Mom at the mall. Dad and Juke ride escalators while Mom shops. 
-                During their walk, teenage boys mock Juke. They ride escalators again and drive home.
-              </p>
+              <ul className="list-disc pl-6 space-y-2 text-gray-300">
+                <li>Family meets at the mall</li>
+                <li>Dad and Juke ride escalators for fun</li>
+                <li>Mom shops while they play</li>
+                <li>Teenage boys mock Juke during walk</li>
+                <li>More escalator rides before heading home</li>
+              </ul>
             </div>
             
             {/* Chapter 43 */}
-            <div className="bg-gray-900 rounded-lg p-8 border-l-4 border-amber-500">
-              <h2 className="text-2xl font-bold mb-4 text-amber-400">Chapter 43: Know Your Cats</h2>
-              <p className="text-gray-300">
-                They arrive home, soon joined by Mom and family friend Noelle. Juke greets his cats. 
-                The family and Noelle have lunch and cake together.
-              </p>
+            <div className="bg-gray-900 rounded-lg p-8 border-l-4 border-cyan-500">
+              <h2 className="text-2xl font-bold mb-4 text-cyan-400">Chapter 43: Know Your Cats</h2>
+              <ul className="list-disc pl-6 space-y-2 text-gray-300">
+                <li>Family arrives home</li>
+                <li>Mom and family friend Noelle join them</li>
+                <li>Juke happily greets his cats</li>
+                <li>Family and Noelle share lunch</li>
+                <li>Everyone enjoys cake together</li>
+              </ul>
             </div>
             
             {/* Chapter 44 */}
-            <div className="bg-gray-900 rounded-lg p-8 border-l-4 border-blue-500">
-              <h2 className="text-2xl font-bold mb-4 text-blue-400">Chapter 44: The Aura of a Snort</h2>
-              <p className="text-gray-300">
-                The family prepares to swim. Juke wears a swimsuit, life jacket, and pool shoes. 
-                Dad and Noelle discuss the group home and Juke&apos;s situation, with Dad expressing doubt about God&apos;s plan.
-              </p>
+            <div className="bg-gray-900 rounded-lg p-8 border-l-4 border-cyan-500">
+              <h2 className="text-2xl font-bold mb-4 text-cyan-400">Chapter 44: The Aura of a Snort</h2>
+              <ul className="list-disc pl-6 space-y-2 text-gray-300">
+                <li>Family prepares for swimming</li>
+                <li>Juke puts on swimsuit, life jacket, and pool shoes</li>
+                <li>Dad and Noelle discuss the group home situation</li>
+                <li>Dad expresses doubts about God&apos;s plan</li>
+                <li>Philosophical conversation about disability and faith</li>
+              </ul>
             </div>
             
             {/* Chapter 45 */}
             <div className="bg-gray-900 rounded-lg p-8 border-l-4 border-cyan-500">
               <h2 className="text-2xl font-bold mb-4 text-cyan-400">Chapter 45: I (E?) P in the Pool</h2>
-              <p className="text-gray-300">
-                Juke throws a ball in the pool while they discuss his education plan at Planter. 
-                Dad criticizes the plan as unrealistic. They discuss recent events and criticize Jacobsen.
-              </p>
+              <ul className="list-disc pl-6 space-y-2 text-gray-300">
+                <li>Juke plays ball in the pool</li>
+                <li>Adults discuss his IEP (education plan) at Planter</li>
+                <li>Dad criticizes plan as unrealistic</li>
+                <li>Discussion of recent events</li>
+                <li>Criticism of Mr. Jacobsen&apos;s handling</li>
+              </ul>
             </div>
             
             {/* Chapter 46 */}
-            <div className="bg-gray-900 rounded-lg p-8 border-l-4 border-purple-500">
-              <h2 className="text-2xl font-bold mb-4 text-purple-400">Chapter 46: Burp Up the Works</h2>
-              <p className="text-gray-300">
-                Juke exits the pool after swallowing water. Noelle leaves. Mormon leaders visit. 
-                After they leave, Juke and Dad listen to music, with Dad expressing doubts about faith healing.
-              </p>
+            <div className="bg-gray-900 rounded-lg p-8 border-l-4 border-amber-500">
+              <h2 className="text-2xl font-bold mb-4 text-amber-400">Chapter 46: Burp Up the Works</h2>
+              <ul className="list-disc pl-6 space-y-2 text-gray-300">
+                <li>Juke exits pool after swallowing water</li>
+                <li>Noelle says goodbye and leaves</li>
+                <li>Mormon church leaders visit the family</li>
+                <li>Leaders offer prayers and blessings</li>
+                <li>After they leave, Dad expresses doubts about faith healing</li>
+                <li>Juke and Dad listen to music together</li>
+              </ul>
             </div>
             
             {/* Chapter 47 */}
-            <div className="bg-gray-900 rounded-lg p-8 border-l-4 border-amber-500">
-              <h2 className="text-2xl font-bold mb-4 text-amber-400">Chapter 47: The Original Exclamation</h2>
-              <p className="text-gray-300">
-                Juke eats dinner. His parents debate happiness. Juke uses his &ldquo;dancing dolphin&rdquo; sign for ice cream. 
-                When Mom opens the fridge, a cup falls. Juke swears, and everyone laughs about his &ldquo;All day!&rdquo; expression.
-              </p>
+            <div className="bg-gray-900 rounded-lg p-8 border-l-4 border-cyan-500">
+              <h2 className="text-2xl font-bold mb-4 text-cyan-400">Chapter 47: The Original Exclamation</h2>
+              <ul className="list-disc pl-6 space-y-2 text-gray-300">
+                <li>Juke eats dinner with family</li>
+                <li>Parents debate what happiness means</li>
+                <li>Juke makes &ldquo;dancing dolphin&rdquo; sign for ice cream</li>
+                <li>Cup falls when Mom opens fridge</li>
+                <li>Juke swears with his &ldquo;All day!&rdquo; expression</li>
+                <li>Everyone laughs at the moment of levity</li>
+              </ul>
             </div>
             
             {/* Chapter 48 */}
-            <div className="bg-gray-900 rounded-lg p-8 border-l-4 border-cyan-500">
-              <h2 className="text-2xl font-bold mb-4 text-cyan-400">Chapter 48: Less Talk, More Life</h2>
-              <p className="text-gray-300">
-                The family watches movies together, enjoying their time before Juke must return to the group home.
-              </p>
+            <div className="bg-gray-900 rounded-lg p-8 border-l-4 border-green-500">
+              <h2 className="text-2xl font-bold mb-4 text-green-400">Chapter 48: Less Talk, More Life</h2>
+              <ul className="list-disc pl-6 space-y-2 text-gray-300">
+                <li>Family watches movies together</li>
+                <li>Quiet enjoyment of each other&apos;s company</li>
+                <li>Precious time before Juke returns to group home</li>
+                <li>Focus on being present in the moment</li>
+              </ul>
             </div>
           </div>
         </div>

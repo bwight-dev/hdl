@@ -44,8 +44,8 @@ export default function TuesdayPage() {
             </div>
             
             {/* Chapter 12 */}
-            <div className="bg-gray-900 rounded-lg p-8 border-l-4 border-orange-500">
-              <h2 className="text-2xl font-bold mb-4 text-orange-400">Chapter 12: <em>I Do Not Yet as I Ought to Do</em></h2>
+            <div className="bg-gray-900 rounded-lg p-8 border-l-4 border-amber-500">
+              <h2 className="text-2xl font-bold mb-4 text-amber-400">Chapter 12: <em>I Do Not Yet as I Ought to Do</em></h2>
               <ul className="list-disc pl-6 space-y-2 text-gray-300">
                 <li>Mr. Gabe from Juke&apos;s school arrives</li>
                 <li>Juke attacks Mr. Gabe, grabbing his hair and ripping his jacket</li>
